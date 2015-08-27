@@ -1,0 +1,40 @@
+<ion-view title="Order settings">
+    <ion-content padding="true" class="has-header">
+        <form>
+            <label class="item item-select">
+                <span class="input-label">Flavour</span>
+                <select ng-model="data.flavour" name="flavour" ng-options="source for source in flavours">
+                <option value="">Chose Flavour</option>
+                </select>
+            </label>
+            <div class="item">
+                <h2 align="center">Today activity level</h2>
+                <div class="range">
+                        <i class="ion-arrow-graph-down-left"></i>
+                        <input type="range" min='0' max='2' name="sport" ng-model="data.sport" class="user-sport">
+                        <i class="ion-arrow-graph-up-right"></i>
+                </div>
+                <h2 align="center">{{sport[data.sport]}}</h2>
+            </div>
+            <!--
+            <ion-toggle toggle-class="toggle-positive">Custom fiber level</ion-toggle>
+            <label class="item item-select">
+                <span class="input-label">Amount</span>
+                <select></select>
+            </label>
+            <ion-toggle toggle-class="toggle-positive">Custom carbohydrate level</ion-toggle>
+            <label class="item item-select">
+                <span class="input-label">Input</span>
+                <select></select>
+            </label>
+            <ion-toggle toggle-class="toggle-positive">Im making sport today</ion-toggle>
+            <label class="item item-input">
+                <span class="input-label">More protein for you big boy !</span>
+                <input type="text" placeholder="">
+            </label>
+            -->
+        </form>
+
+        <a href="#/tab/order/place" class="button button-stable button-block ">Next</a>
+    </ion-content>
+</ion-view>

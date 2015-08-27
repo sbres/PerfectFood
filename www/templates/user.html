@@ -1,0 +1,60 @@
+<ion-view view-title="User information" on-swipe-right="onSwipeRight()">
+        <!-- you can call functions using ion-tab
+        http://ionicframework.com/docs/api/directive/ionTab/
+        -->
+    <ion-content padding="true" class="has-header">
+        <form>
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" placeholder="Your name">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Phone</span>
+                    +86 136 
+                    <input type="tel" placeholder="" >
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Birth</span>
+                    <input type="date" placeholder="">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Height</span>
+                    <input type="number" placeholder="">
+                    <div class="user-size">cm</div>
+                </label>
+            </ion-list>
+            <div class="button-bar"></div>
+            <label class="item item-select">
+                <span class="input-label">Sex</span>
+                <select>
+                    <option>Women</option>
+                    <option>Men</option>
+                </select>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Weight</span>
+                <input type="number" placeholder="">
+                <div class="user-size">Kg</div>
+            </label>
+            <!--
+            <ion-item class="range range-positive">
+                Exercise
+                <input type="range" min='0' max='2' name="sport" ng-model="data.sport" class="user-sport">
+                {{sport[data.sport]}}
+            </ion-item>
+            -->
+            <!--
+            <label class="item item-select">
+                <span class="input-label">Goal</span>
+                <select>
+                    <option>Gain weight</option>
+                    <option>Maintain weight</option>
+                    <option>Lose weight</option>
+                </select>
+            </label>
+            -->
+        </form>
+        <button class="button button-stable button-block" href="#/tab/order/settings">Save</button>
+    </ion-content>
+</ion-view>
