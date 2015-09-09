@@ -7,20 +7,40 @@ Get geolocalisation.
 <ion-view view-title="Delivery Addres">
     <ion-content padding="true" class="has-header">
 
-    	<div class="list list-inset">
-		  <label class="item item-input">
-		    <i class="icon ion-search placeholder-icon"></i>
-		    <input type="text" placeholder="Search">
-		  </label>
+    	<div ng-if="is_adress == true">
+		<h3 align="center">
+			Select your delivery adress
+		</h2>
 		</div>
-		<!--<div ng-show="adress=[]">
+
+		<ion-list class="has-header"
+		          show-delete="data.showDelete">
+		  <ion-item collection-repeat="item in adress"
+		  			ng-click="select_add($index)"
+		  			href="#/tab/order/repicatulatif">
+		    <h2>{{item.name}}</h2>
+		    <p>{{item.adress}}</p>
+		    <ion-delete-button class="ion-minus-circled"
+		                       ng-click="onItemDelete($index)" >
+		    </ion-delete-button>
+		  </ion-item>
+		</ion-list>
+
+
+		<div ng-if="is_adress == false">
+		<h3 align="center">
 			You don't have any adress save one to deliver !
+		</h2>
 		</div>
-<!--
-		<div style="position: absolute; bottom: 50px; width: 100%">
-			<button class="button button-stable button-block " >Save new adress</button>
+		<div style="bottom: 50px; width: 100%">
+			<button class="button button-stable button-block " ng-click="pop_new()">Save new adress</button>
 		</div>
--->
+		<div style="bottom: 50px; width: 100%" ng-if="is_adress == true && !data.showDelete">
+			<button class="button button-assertive button-block " ng-click="data.showDelete=!data.showDelete">Delete adress</button>
+		</div>
+		<div style="bottom: 50px; width: 100%" ng-if="data.showDelete">
+			<button class="button button-assertive button-block " ng-click="data.showDelete=!data.showDelete">Stop delete adress</button>
+		</div>
     </ion-content>
 </ion-view>
 

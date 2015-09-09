@@ -1,42 +1,73 @@
-<ion-view view-title="User information" on-swipe-right="onSwipeRight()">
+<ion-view view-title="User information" on-swipe-left="onSwipeLeft()" class="slide-left-right">
         <!-- you can call functions using ion-tab
         http://ionicframework.com/docs/api/directive/ionTab/
         -->
-    <ion-content padding="true" class="has-header">
-        <form>
-            <ion-list>
-                <label class="item item-input">
+    <ion-content class="has-header">
+            <ion-list class="padding-top">
+                    <!--
+                    <h3 class="title">{{ (tog)? 'Woman':'Men'}}</h3>
+                    <div class="cntr">
+                    <label class="toggle" >
+                    <input type="checkbox" ng-model="tog">
+                    <div class="track">
+                       <i class='icon ion-man toggle-icon-left'></i>
+                       <div class="handle"></div>
+                       <i class='icon ion-woman toggle-icon-right'></i>
+                    </div>
+                    </label>
+                    </div>
+                    -->
+                
+
+                <div class="item button-bar">
+                  <a class="button"
+                     ng-show="data.sex != 1"
+                     ng-click="data.sex = 1"
+                     >Men</a>
+                  
+                  <a class="button button-balanced"
+                     ng-show="data.sex == 1"
+                     >Men</a>
+
+                  <a class="button button-balanced"
+                     ng-show="data.sex == 2"
+                     ng-click="data.sex = 2">Woman</a>
+                  <a class="button"
+                     ng-show="data.sex != 2"
+                     ng-click="data.sex = 2">Woman</a>
+   
+                </div>
+
+
+                <label class="item item-input item-floating-label">
                     <span class="input-label">Name</span>
-                    <input type="text" placeholder="Your name">
+                    <input type="text" placeholder="Name" ng-model="data.name">
                 </label>
-                <label class="item item-input">
-                    <span class="input-label">Phone</span>
-                    +86 136 
-                    <input type="tel" placeholder="" >
-                </label>
-                <label class="item item-input">
+                <label class="item item-input item-stacked-label">
                     <span class="input-label">Birth</span>
-                    <input type="date" placeholder="">
+                    <input type="date" ng-model="data.birth">
                 </label>
-                <label class="item item-input">
-                    <span class="input-label">Height</span>
-                    <input type="number" placeholder="">
-                    <div class="user-size">cm</div>
-                </label>
-            </ion-list>
-            <div class="button-bar"></div>
-            <label class="item item-select">
-                <span class="input-label">Sex</span>
-                <select>
-                    <option>Women</option>
-                    <option>Men</option>
+
+                <label class="item item-select">
+                <span class="input-label">Height</span>
+                <select ng-model="data.height" name="height"  ng-options="page for page in Height_range(120, 220)" ng-model="data.height">
+                <option value="">Select your height</option>
                 </select>
-            </label>
-            <label class="item item-input">
-                <span class="input-label">Weight</span>
-                <input type="number" placeholder="">
-                <div class="user-size">Kg</div>
-            </label>
+                </label>
+
+                <label class="item item-select">
+                    <span class="input-label">Weight</span>
+                    <select ng-model="data.weight" name="weight"  ng-options="page for page in Weight_range(40, 100)" ng-model="data.weight">
+                    <option value="">Select your weight</option>
+                    </select>
+                </label>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Phone number</span>
+                    <input type="tel" placeholder="Phone Number" ng-model="data.phone">
+                </label>
+
+            
             <!--
             <ion-item class="range range-positive">
                 Exercise
@@ -54,7 +85,9 @@
                 </select>
             </label>
             -->
-        </form>
-        <button class="button button-stable button-block" href="#/tab/order/settings">Save</button>
+            <label class="item">
+                        <button class="button button-block button-balanced" ng-click="save()">Save</button>
+            </label>
+            </ion-list>
     </ion-content>
 </ion-view>

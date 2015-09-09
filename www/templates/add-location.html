@@ -1,0 +1,32 @@
+<ion-modal-view>
+  <ion-header-bar class="header-bar-login">
+    <div class="image-connection-div">
+    </div>
+    <h1 class="title">Save new address</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="close_new()">Close</button>
+    </div>
+
+  </ion-header-bar>
+
+  <ion-content class="content-login">
+    <form ng-submit="doSave()">
+      <div class="list">
+        
+        <label class="item item-input background-login top-login">
+          <span class="input-label color-login">Name</span>
+          <input type="text" ng-model="data.name">
+        </label>
+        
+        <label class="item item-input background-login">
+          <span class="input-label color-login">Adress</span>
+          <input type="text" ng-model="data.adress">
+        </label>
+
+		    <label class="item background-login">
+          <button class="button button-block button-log" type="submit">Save</button>
+        </label>
+      </div>
+  </form>
+  </ion-content>
+</ion-modal-view>

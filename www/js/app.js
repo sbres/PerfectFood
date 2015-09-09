@@ -1,4 +1,4 @@
-w// Ionic Starter App
+// Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
@@ -50,48 +50,39 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.order-place', {
-      url: '/order/place',
-      views: {
-        'tab-order': {
-          templateUrl: 'templates/order-location.html',
-          controller: 'DeliveryCtrl'
-        }
+  .state('tab.order', {
+    url: '/order',
+    views: {
+      'tab-order': {
+        templateUrl: 'templates/order-settings.html',
+        controller: 'OrderCtrl'
       }
-    })
-    .state('tab.order-detail', {
-      url: '/order/settings',
-      views: {
-        'tab-order': {
-          templateUrl: 'templates/order-settings.html',
-          controller: 'OrderCtrl'
+    }
+  })
+    .state('tab.order-place', {
+        url: '/order/place',
+        views: {
+          'tab-order': {
+            templateUrl: 'templates/order-location.html',
+            controller: 'DeliveryCtrl'
+          }
         }
-      }
-    })
-    .state('tab.order-price', {
-      url: '/order/price',
-      views: {
-        'tab-order': {
-          templateUrl: 'templates/order-price.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-    .state('tab.order-qr', {
-      url: '/order/qr',
-      views: {
-        'tab-order': {
-          templateUrl: 'templates/order-qr.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
+      })
     .state('tab.order-deliver', {
       url: '/order/deliver',
       views: {
         'tab-order': {
           templateUrl: 'templates/order-deliver.html',
-          controller: 'ChatDetailCtrl'
+          controller: 'OrderCtrl'
+        }
+      }
+    })
+    .state('tab.order-repicatulatif', {
+      url: '/order/repicatulatif',
+      views: {
+        'tab-order': {
+          templateUrl: 'templates/order-repicatulatif.html',
+          controller: 'OrderConfirmCtrl'
         }
       }
     })
@@ -104,7 +95,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+  .state('login', {
+    url: '/login',
+    views: {
+      'login': {
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+      }
+    }
+  })
+  ;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/user');

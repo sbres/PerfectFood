@@ -1,12 +1,36 @@
 /* Empty. Add your own CSS if you like */
 
-
-.user-size {
-    padding-right: 35px
+.test {
+	color: red;
 }
 
-.user-sport {
-	color: black;
 
+div.track{
+  background-color: #4A87EE !important;
 }
 
+div.cntr{
+  display: block;
+  margin: 0 auto;
+  width: 64px;
+  height: 60px;
+}
+
+h3.title{
+  text-align: center;
+}
+
+i.toggle-icon-left{
+  float: left;
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  z-index: 999;
+}
+
+i.toggle-icon-right{
+  float: right;
+  position: absolute;
+  right: 13px;
+  top: 12px;
+}
