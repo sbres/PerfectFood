@@ -4,29 +4,107 @@ Get geolocalisation.
 
 -->
 
-<ion-view view-title="Delivery Addres">
-    <ion-content padding="true" class="has-header">
-
-    	<div ng-if="is_adress == true">
-		<h3 align="center">
-			Select your delivery adress
-		</h2>
+<ion-view view-title="Delivery" ng-init="init()">
+	<ion-content>
+		<div class="bar bar-header bar-energized">
+				<h2 class="title">
+					Deliver 1 shake to
+				</h2>
 		</div>
+	</ion-content>
+	<ion-content padding="true" class="has-subheader">
+		<ion-list 
+				show-delete="data.showDelete" show-reorder="data.showReorder">
+			
+			<ion-item ng-click="static_address('home')">
+				<h2>
+					Home
+				</h2>
+				
+				<p ng-show="data.home.name == undefined">
+					Click here to define your home
+				</p>
+				
+				<p ng-show="data.home.name != undefined">
+					{{data.home.adress}}
+				</p>
 
-		<ion-list class="has-header"
-		          show-delete="data.showDelete">
-		  <ion-item collection-repeat="item in adress"
-		  			ng-click="select_add($index)"
+				<ion-delete-button class="ion-minus-circled"
+					ng-click="onItemDelete('home')" >
+				</ion-delete-button>
+
+				<ion-reorder-button class="ion-edit"
+                        ng-click="editaddress('home')">
+    			</ion-reorder-button>
+
+			
+			</ion-item>
+
+			<ion-item ng-click="static_address('office')">
+				<h2>Office</h2>
+
+				<p ng-show="data.office.name == undefined">Click here to define your office</p>
+				<p ng-show="data.office.name != undefined">
+					{{data.office.adress}}
+				</p>
+				
+				<ion-delete-button class="ion-minus-circled"
+					ng-click="onItemDelete('office')" >
+				</ion-delete-button>
+
+				<ion-reorder-button class="ion-edit"
+                        ng-click="editaddress('office')">
+    			</ion-reorder-button>
+
+
+
+			</ion-item>
+
+			<ion-item collection-repeat="item in data.directions"
+		  			ng-click="select_address($index)"
 		  			href="#/tab/order/repicatulatif">
+
 		    <h2>{{item.name}}</h2>
 		    <p>{{item.adress}}</p>
 		    <ion-delete-button class="ion-minus-circled"
 		                       ng-click="onItemDelete($index)" >
 		    </ion-delete-button>
+
+		    <ion-reorder-button class="ion-edit"
+                        ng-click="editaddress($index)">
+    		</ion-reorder-button>
+
+
 		  </ion-item>
+
+
+        
+
 		</ion-list>
+		<ion-item class="selection">
+        	<div class="button-bar">
+					<a class="button button-icon" ng-click="pop_new()">
+          				<i class="icon ion-plus my-icon">
+          				</i>
+          				<div class="icons">
+          				New address
+          				</div>
+          			</a>
+					<a class="button button-icon" ng-click="data.showReorder = !data.showReorder">
+          				<i class="icon ion-edit my-icon">
+          				</i>
+          				Edit
+          			</a>
 
 
+					<a class="button button-icon" ng-click="data.showDelete = !data.showDelete">
+          				<i class="icon ion-trash-a my-icon">
+          				</i>
+          				Delete
+          			</a>
+			</div>
+        </ion-item>
+        <!--
 		<div ng-if="is_adress == false">
 		<h3 align="center">
 			You don't have any adress save one to deliver !
@@ -41,6 +119,10 @@ Get geolocalisation.
 		<div style="bottom: 50px; width: 100%" ng-if="data.showDelete">
 			<button class="button button-assertive button-block " ng-click="data.showDelete=!data.showDelete">Stop delete adress</button>
 		</div>
+		-->
+
+
+
     </ion-content>
 </ion-view>
 

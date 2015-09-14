@@ -4,7 +4,7 @@
 
             <label class="item item-select">
                 <span class="input-label">Flavour</span>
-                <select ng-model="data.flavour" name="flavour" ng-options="source for source in flavours">
+                <select ng-model="data.tmp.flavour" name="flavour" ng-options="source for source in flavours">
                 <option value="">Chose Flavour</option>
                 </select>
             </label>
@@ -13,10 +13,10 @@
                 <h2 align="center">Today activity level</h2>
                 <div class="range">
                         <i class="ion-arrow-graph-down-left"></i>
-                        <input type="range" min='0' max='2' name="sport" ng-model="data.sport">
+                        <input type="range" min='0' max='2' name="sport" ng-model="data.tmp.sport">
                         <i class="ion-arrow-graph-up-right"></i>
                 </div>
-                <h2 align="center">{{sport[data.sport]}}</h2>
+                <h2 align="center">{{sport[data.tmp.sport]}}</h2>
             </div>
             <!--
             <ion-toggle toggle-class="toggle-positive">Custom fiber level</ion-toggle>
@@ -36,7 +36,7 @@
             </label>
             -->
         <label class="item ">
-            <button class="button button-block button-balanced" ng-click="save()">Next</button>
+            <button class="button button-block button-balanced" ng-click="next_1()">Next</button>
         </label>
 
         <a class="button button-stable button-block" ng-click="reset()">RESET</a>

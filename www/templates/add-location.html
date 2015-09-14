@@ -1,5 +1,5 @@
-<ion-modal-view>
-  <ion-header-bar class="header-bar-login">
+<ion-modal-view class="newaddres">
+  <ion-header-bar class="header-bar-login bar-balanced">
     <div class="image-connection-div">
     </div>
     <h1 class="title">Save new address</h1>
@@ -15,17 +15,46 @@
         
         <label class="item item-input background-login top-login">
           <span class="input-label color-login">Name</span>
-          <input type="text" ng-model="data.name">
+          <input type="text" ng-model="data.save.name">
+        </label>
+
+        <label class="item item-select">
+          <span class="input-label">City</span>
+          <select ng-model="data.save.city" ng-options="page for page in data.cities">
+          <option value="">Select your city</option>
+          </select>
         </label>
         
         <label class="item item-input background-login">
-          <span class="input-label color-login">Adress</span>
-          <input type="text" ng-model="data.adress">
+          <span class="input-label color-login">District</span>
+          <input type="text" ng-model="data.save.district">
         </label>
 
-		    <label class="item background-login">
-          <button class="button button-block button-log" type="submit">Save</button>
+        <label class="item item-input background-login">
+          <span class="input-label color-login">Adress</span>
+          <input type="text" ng-model="data.save.adress">
         </label>
+
+        <label class="item item-input background-login">
+          <span class="input-label color-login">Floor number</span>
+          <input type="text" ng-model="data.save.floor">
+        </label>
+
+        <label class="item item-input background-login">
+          <span class="input-label color-login">Apartment number</span>
+          <input type="text" ng-model="data.save.apartment">
+        </label>
+
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Aditional comments</span>
+          <input type="text" ng-model="data.save.comment">
+        </label>
+
+        <label class="item background-login">
+          <button class="button button-block button-balanced" type="submit">Save</button>
+        </label>
+
+        
       </div>
   </form>
   </ion-content>

@@ -64,7 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
           'tab-order': {
             templateUrl: 'templates/order-location.html',
-            controller: 'DeliveryCtrl'
+            controller: 'OrderCtrl'
           }
         }
       })

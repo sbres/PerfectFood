@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('OrderCtrl', function($scope, $window, $state, $ionicViewSwitcher) {
+/*.controller('OrderCtrl', function($scope, $window, $state, $ionicViewSwitcher) {
   //delete $window.localStorage["adress"];
   $scope.data = { 'sport' : '1'};
 
@@ -37,110 +37,7 @@ angular.module('starter.controllers', [])
       $ionicViewSwitcher.nextDirection("back");
   };
 
-})
-
-.controller('DeliveryCtrl', function($scope, $window, $ionicModal, myCoolService, $ionicPopup, $state) {
-  //Chopper les directions deja enregistre depuis le serveur
-  console.log(myCoolService.directions);
-  //Pour l'instant utiliser local storage
-  
-  $scope.data = {'name': '',
-                 'adress': '',
-                  showDelete: false};
-
-  $scope.adress = myCoolService.directions;
-  if ($scope.adress.length == 0)
-  {
-    $scope.is_adress = false;
-  }
-  else
-  {
-    $scope.is_adress = true;
-  }
-  /////////////////////////////////////////////////////
-
-  $ionicModal.fromTemplateUrl('templates/add-location.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-
-  /////////////////////////////////////////////////////
-
-  $scope.pop_new = function(){
-    $scope.modal.show();
-    $scope.data['name'] = '';
-    $scope.data['adress'] = '';
-  };
-
-  $scope.close_new = function() {
-    $scope.modal.hide();
-    if ($scope.adress.length == 0)
-    {
-      $scope.is_adress = false;
-    }
-    else
-    {
-      $scope.is_adress = true;
-    }
-  };
-
-  $scope.doSave = function(){
-    if ($scope.data['name'].localeCompare('') == 0){
-      $ionicPopup.alert({
-         title: 'Woups !',
-         template: 'Please add a name.'
-       });
-      return;
-    }
-    if ($scope.data['adress'].localeCompare('') == 0){
-      $ionicPopup.alert({
-        title: 'Woups !',
-        template: 'Please add a adress.'
-      });
-      return;
-    }
-    $tmp = {'name': $scope.data['name'],
-            'adress': $scope.data['adress']};
-    $scope.adress.push($tmp);
-    $window.localStorage["adress"] = JSON.stringify($scope.adress);
-    if ($scope.adress.length == 0)
-    {
-      $scope.is_adress = false;
-    }
-    else
-    {
-      $scope.is_adress = true;
-    }
-    $scope.modal.hide();
-  };
-  //////////////////////////////////////////
-  
-  $scope.onItemDelete = function(item) {
-    //$scope.items.splice($scope.items.indexOf(item), 1);
-    $scope.adress.splice(item, 1);
-    $window.localStorage["adress"] = JSON.stringify($scope.adress);
-    if ($scope.adress.length == 0)
-    {
-      $scope.is_adress = false;
-    }
-    else
-    {
-      $scope.is_adress = true;
-    }
-  };
-  /////////////////////////////////////////
-
-  $scope.select_add = function(item){
-    var $tmp;
-    $tmp = $scope.adress[item];
-    $window.localStorage['adress'] = JSON.stringify($tmp);
-
-    //you save the adresse here
-  };
-
-})
+})*/
 
 
 .controller('OrderConfirmCtrl', function($scope, $window) {
@@ -204,11 +101,7 @@ angular.module('starter.controllers', [])
       console.log($scope.data);
       var data = $scope.data;
       //TODO Save data in local storage.
-      $state.go('tab.order');
-      $ionicViewSwitcher.nextDirection("forward");
       if (data['sex'] == undefined){
-        
-
         //showAlert('sex.');
       }
       else if (data['name'] == undefined){

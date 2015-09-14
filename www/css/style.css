@@ -4,7 +4,6 @@
 	color: red;
 }
 
-
 div.track{
   background-color: #4A87EE !important;
 }
@@ -34,3 +33,52 @@ i.toggle-icon-right{
   right: 13px;
   top: 12px;
 }
+
+ion-modal-view.newaddres{
+  top: 44px !important;
+}
+
+.modal-backdrop-bg {
+    -webkit-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+    background-color: #000;
+    opacity: 0; }
+  .active .modal-backdrop-bg {
+    opacity: 0.5; } }
+
+textarea, input[type="text"]{
+  display: block;
+  padding-top: 2px;
+  padding-left: 0;
+  height: 34px;
+  color: #111;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.icon-top .icon{
+  display: block;
+  margin: 0 auto;
+  height: 32px;
+  font-size: 32px;
+}
+
+
+.my-icon:before,
+.my-icon{
+  font-size:30px !important;
+  display:block !important;
+  height: 32px;
+}
+
+div.selection {
+}
+
+ion-item.selection{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
